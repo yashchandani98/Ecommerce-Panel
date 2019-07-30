@@ -57,7 +57,8 @@ class LoginRegister extends CI_Controller {
         if(!empty($user_details)){
             foreach($user_details as $row){
                 if($row->Approved==1){
-                    $this->session->set_userdata('pk_id', $row->Pk_id);
+                    // $this->session->set_userdata('Pk_id', $row->Pk_id);
+                    $this->session->set_userdata($user_details);
                     redirect(base_url() . 'Dealer/Dashboard');
                 }   
                 else if($row->Approved==0){

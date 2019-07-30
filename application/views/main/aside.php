@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view('LoginRegister/vw_header');
 ?>
 <head>
-<title>Dashboard</title>
 </head>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -54,7 +53,7 @@ $this->load->view('LoginRegister/vw_header');
                                 <i class="fas fa-copy"></i>Products</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="login.html">Add</a>
+                                    <a href="../Product/Add">Add</a>
                                 </li>
                                 <li>
                                     <a href="register.html">View</a>
@@ -148,7 +147,7 @@ $this->load->view('LoginRegister/vw_header');
                                 <i class="fas fa-copy"></i>Products</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="login.html">Add</a>
+                                    <a href="../Product/Add">Add</a>
                                 </li>
                                 <li>
                                     <a href="register.html">View</a>

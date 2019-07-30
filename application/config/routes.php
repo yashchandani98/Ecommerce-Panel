@@ -8,5 +8,7 @@ $route['Dealer/Login'] = 'LoginRegister/index';
 $route['Dealer/Dashboard']='main/dashboard';
 $route['dealer/loginCheck']='LoginRegister/loginCheck';
 $route['dealer/register']='LoginRegister/registerDealer';
+$route['Product/Add']='Product/add';
+$route['product/register']='Product/register';
 $route['translate_uri_dashes'] = FALSE;
 ?>

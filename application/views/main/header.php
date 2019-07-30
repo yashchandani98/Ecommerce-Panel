@@ -123,13 +123,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="account-wrap">
+                                <div class="account-wrap" style="float:right;">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
+                                            <?php
+                                            if($this->session->userdata('Business_name')){
+                                                $name=$this->session->userdata('Business_name');
+                                            }
+                                            else{
+                                                $name="Unknown";
+                                            }
+                                            ?>
                                             <img src="<?=base_url()?>assets/admin/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#"><?=$name?></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
