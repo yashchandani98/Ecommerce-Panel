@@ -4,6 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class LoginRegister extends CI_Controller {
     function __construct() {
         parent::__construct();
+        $this->is_logged_in();   
+    }
+    function is_logged_in(){
+        if($this->session->userdata('Pk_id')){
+            redirect(base_url().'Dealer/Dashboard');
+        }
     }
 	public function index(){
 		$this->load->view('LoginRegister/Login');
@@ -57,8 +63,23 @@ class LoginRegister extends CI_Controller {
         if(!empty($user_details)){
             foreach($user_details as $row){
                 if($row->Approved==1){
-                    // $this->session->set_userdata('Pk_id', $row->Pk_id);
-                    $this->session->set_userdata($user_details);
+                    $arr=array(
+                        'Pk_id'=>$row->Pk_id,
+                        'Dealer_id'=>$row->Dealer_id,
+                        'Business_name'=>$row->Business_name,
+                        'Dealer_name'=>$row->Dealer_name,
+                        'Email'=>$row->Email,
+                        'Phone'=>$row->Phone,
+                        'Pan_card'=>$row->Pan_card,
+                        'Gst_number'=>$row->Gst_number,
+                        'Mode'=>$row->Mode,
+                        'Date_registered'=>$row->Date_registered,
+                        'City_id'=>$row->City_id,
+                        'Business_category_id'=>$row->Business_category_id
+                    );
+                    //$this->session->set_userdata('Pk_id', $row->Pk_id);
+                    $this->session->set_userdata($arr);
+                    //<?=$this->session->userdata('Pk_id')
                     redirect(base_url() . 'Dealer/Dashboard');
                 }   
                 else if($row->Approved==0){
@@ -76,6 +97,10 @@ class LoginRegister extends CI_Controller {
             redirect(base_url() . 'Dealer/Login');
         }
         }
+    }
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect(base_url() . 'Dealer/Login');
     }
 }
 ?>
