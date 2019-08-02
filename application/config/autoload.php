@@ -58,7 +58,11 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
+<<<<<<< HEAD
 $autoload['libraries'] = array('database','session','form_validation');
+=======
+$autoload['libraries'] = array('database','session','form_validation','upload');
+>>>>>>> 3015471eb805ce11df823647f8848c9cd7c70ca9
 
 /*
 | -------------------------------------------------------------------
@@ -133,4 +137,8 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
+<<<<<<< HEAD
 $autoload['model'] = array('MD_LoginRegister');
+=======
+$autoload['model'] = array('MD_LoginRegister','MD_Products');
+>>>>>>> 3015471eb805ce11df823647f8848c9cd7c70ca9
